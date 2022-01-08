@@ -1,0 +1,39 @@
+//import React from 'react'; //imr+tab para importar react , si usas jsx debes importarlo, pero ya con las nuevas versiones no
+
+//import { Fragment } from "react";
+
+import PropTypes from 'prop-types';
+
+// functional components (Componentes)
+//props es el objeto propiedades, pero para no poner props.saludo, mejor lo desestructuramos
+const PrimeraApp = ( { saludo, subtitulo } ) => { 
+    
+
+
+    /* solo puedes retornar más de un elemento si lo agrupas en uno solo, ejemplo en un div,
+     o si no lo necesitas, puedes usar fragments (también puedes crear un fragment dejando vacío los tags y los cierras) */
+    return (
+        //<div>
+        //<Fragment>
+        <>
+            <h1> { saludo } </h1>
+            {/* <pre> { JSON.stringify( saludo, null, 3 ) } </pre> */}
+            <p> {subtitulo} </p>
+        </>
+        //</Fragment>
+        //</div>
+    );
+
+    
+}
+
+PrimeraApp.propTypes = {
+    saludo: PropTypes.string.isRequired //La propiedad saludo debe ser string y es obligatoria
+}
+
+//mandamos propiedades por defecto, aunque tambien se puede de forma tradicional ejemlo : { saludo, subtitulo= 'Valor' }
+PrimeraApp.defaultProps = {
+    subtitulo: 'Subtitulo miado'
+}
+
+export default PrimeraApp;

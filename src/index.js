@@ -1,17 +1,11 @@
-import React from 'react';
+// import React from 'react';// ya no necesita importarse desde cierta version de react
 import ReactDOM from 'react-dom';
+//import PrimeraApp from './PrimeraApp';
+import CounterApp from './CounterApp';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const divRoot = document.querySelector('#root');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// <Componente propiedad= 'saludo'> las properties solo se declaran en el comp padre (donde se usan la primera vez)
+//ReactDOM.render( <PrimeraApp saludo = 'Saludo Verguero' /> , divRoot); 
+ReactDOM.render( <CounterApp value= { 0 } /> , divRoot); 
